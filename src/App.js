@@ -2,11 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Error404 from "./screens/Error404";
 import Home from "./screens/Home";
 import Playground from "./screens/Playground";
-import { GlobalStyle } from "./style/global";
+import { GlobalStyle } from "./style/global"; 
+import { ModalProvider } from "./context/ModalContext";
 
 function App() {
   return (
     <>
+    <ModalProvider>
     <BrowserRouter>
     <GlobalStyle/>
    <Routes>
@@ -15,6 +17,8 @@ function App() {
     <Route path="*" element={<Error404/>}></Route>
    </Routes>
     </BrowserRouter>
+    </ModalProvider>
+   
     </>
   );
 }

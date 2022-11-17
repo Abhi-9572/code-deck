@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { ModelContext } from '../context/ModalContext'
 import NewFolder from './ModalTypes/NewFolder'
 import NewPlayGround from './ModalTypes/NewPlayGround'
 import NewPlaygroundAndFolder from './ModalTypes/NewPlaygroundAndFolder'
@@ -42,13 +43,15 @@ span{
 `
 
 const Model = () => {
-    const type=2;
+    // const type=3;
+    const{modalType}=useContext(ModelContext)
+    // console.log(modalType)
   return (
     <ModalContainer>
         <ModalContent>
-            {type===1 &&<NewFolder/>}
-            {type===2 &&<NewPlayGround/>}
-            {type===3 &&<NewPlaygroundAndFolder/>}
+            {modalType===1 &&<NewFolder/>}
+            {modalType===2 &&<NewPlayGround/>}
+            {modalType===3 &&<NewPlaygroundAndFolder/>}
            
             {/* <NewFolder/> */}
             {/* <NewPlayGround/>
