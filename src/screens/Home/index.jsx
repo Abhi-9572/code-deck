@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Model from '../../components/Model'
 import LeftComponenet from './LeftComponenet'
 import RightComponent from './RightComponent'
 
@@ -14,6 +15,7 @@ const Home = () => {
     
     <LeftComponenet/>
     <RightComponent/>
+    <Model/>
    </StyledHome>
   )
 }
