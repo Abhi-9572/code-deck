@@ -116,7 +116,7 @@ const RightComponent = () => {
                     </Heading>
                     <FolderIcons>
                         <IoTrashOutline/>
-                        <BiEditAlt onClick={()=>setModal(true,2)}/>
+                        <BiEditAlt onClick={()=>setModal(true,4)}/>
                         <AddFolder  onClick={()=>setModal(true,2)}><span>+</span> New Playground</AddFolder>
                     </FolderIcons>
                </Header> 
@@ -135,7 +135,7 @@ const RightComponent = () => {
             
                         <FolderIcons>
                             <IoTrashOutline/>
-                            <BiEditAlt onClick={()=>setModal(true,2)}/>
+                            <BiEditAlt onClick={()=>setModal(true,5)}/>
                         </FolderIcons>
                             </Card>
                         ))

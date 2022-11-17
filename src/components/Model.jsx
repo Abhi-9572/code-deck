@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { ModelContext } from '../context/ModalContext'
+import EditFolder from './ModalTypes/EditFolder'
+import EditPlayGroundTitle from './ModalTypes/EditPlayGroundTitle'
 import NewFolder from './ModalTypes/NewFolder'
 import NewPlayGround from './ModalTypes/NewPlayGround'
 import NewPlaygroundAndFolder from './ModalTypes/NewPlaygroundAndFolder'
@@ -52,6 +54,8 @@ const Model = () => {
             {modalType===1 &&<NewFolder/>}
             {modalType===2 &&<NewPlayGround/>}
             {modalType===3 &&<NewPlaygroundAndFolder/>}
+            {modalType===4 &&<EditFolder/>}
+            {modalType===5 &&<EditPlayGroundTitle/>}
            
             {/* <NewFolder/> */}
             {/* <NewPlayGround/>
