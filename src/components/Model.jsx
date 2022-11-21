@@ -44,9 +44,37 @@ span{
 }
 `
 
+export const CloseButton = styled.button`
+  background: transparent;
+  outline: 0;
+  border: 0;
+  font-size: 2rem;
+  cursor: pointer;
+`;
+
+export const Input = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  gap: 2rem;
+  padding-bottom: 0;
+  input {
+    flex-grow: 1;
+    height: 2rem;
+  }
+  button {
+    background: #241f21;
+    height: 2rem;
+    color: white;
+    padding: 0.1rem 2rem;
+  }
+`;
+
 const Model = () => {
     // const type=3;
-    const{modalType}=useContext(ModelContext)
+    const{isOpenModal}=useContext(ModelContext)
+    const {modalType}=isOpenModal;
     // console.log(modalType)
   return (
     <ModalContainer>

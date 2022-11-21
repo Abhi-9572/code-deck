@@ -4,10 +4,13 @@ import Home from "./screens/Home";
 import Playground from "./screens/Playground";
 import { GlobalStyle } from "./style/global"; 
 import { ModalProvider } from "./context/ModalContext";
+import PlaygroundProvider from "./context/PlaygroundContext";
+
 
 function App() {
   return (
     <>
+    <PlaygroundProvider>
     <ModalProvider>
     <BrowserRouter>
     <GlobalStyle/>
@@ -18,6 +21,8 @@ function App() {
    </Routes>
     </BrowserRouter>
     </ModalProvider>
+    </PlaygroundProvider>
+   
    
     </>
   );

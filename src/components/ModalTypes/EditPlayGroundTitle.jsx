@@ -1,20 +1,51 @@
-import React, { useContext } from 'react'
-import { Header, Heading } from '../Model'
+import React, { useContext,useState } from 'react'
+import { CloseButton, Header, Heading, Input } from '../Model'
 import {IoCloseSharp} from 'react-icons/io5'
 import { ModelContext } from '../../context/ModalContext'
+import { PlaygroundContext } from '../../context/PlaygroundContext'
+
+
 
 const EditPlayGroundTitle = () => {
-  const {setisOpenModal}=useContext(ModelContext)
+  const { isOpenModal, closeModal } = useContext(ModelContext);
+  const { editPlaygroundTitle, folders } = useContext(PlaygroundContext);
+
+  const { folderId, cardId } = isOpenModal.identifiers;
+  const [playgroundTitle, setPlaygroundTitle] = useState(folders[folderId].playgrounds[cardId].title);
+
   return (
     <>
-            <Header>
-                <Heading><p>Edit PlayGround</p></Heading>
-                <IoCloseSharp onClick={()=>setisOpenModal(false)}/>
-            </Header>
-            <p>Enter New  PlayGround:<input type="text" /></p> 
-            <button>Edit PlayGround</button>
-   </>
+      <Header>
+        <h2>Edit Card Title</h2>
+        <CloseButton onClick={() => closeModal()}>
+          <IoCloseSharp />
+        </CloseButton>
+      </Header>
+      <Input>
+        <input type="text" onChange={(e) => setPlaygroundTitle(e.target.value)} />
+        <button onClick={() => {
+          editPlaygroundTitle(folderId, cardId, playgroundTitle)
+          closeModal()
+        }}>Update Title</button>
+      </Input>
+    </>
   )
 }
 
 export default EditPlayGroundTitle
+
+// const EditPlayGroundTitle = () => {
+//   const {closeModal}=useContext(ModelContext)
+//   return (
+//     <>
+//             <Header>
+//                 <Heading><p>Edit PlayGround</p></Heading>
+//                 <IoCloseSharp onClick={()=>closeModal()}/>
+//             </Header>
+//             <p>Enter New  PlayGround:<input type="text" /></p> 
+//             <button>Edit PlayGround</button>
+//    </>
+//   )
+// }
+
+// export default EditPlayGroundTitle

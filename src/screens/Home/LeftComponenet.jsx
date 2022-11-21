@@ -59,14 +59,26 @@ font-weight:700;
 
 
 const LeftComponenet = () => {
-  const {setModal}=useContext(ModelContext)
+  // const {setModal}=useContext(ModelContext)
+
+  const {openModal}=useContext(ModelContext)
   return (
     <StyledLeftComponenet>
         <ContentContainer>
             <Logo src={logo}  />
             <MainHeading> <span>Code</span>  Deck</MainHeading>
             <SubHeading>Code. Compile. Develop.</SubHeading>
-            <AddPlayground onClick={()=>setModal(true,3)}><span>+</span> Create New PlayGround</AddPlayground>
+            <AddPlayground onClick={()=>openModal(
+              {
+                show : true,
+                modalType : 3,
+                identifiers : {
+                folderId : "",
+                cardId : "",
+                              }
+              }
+             )}>
+              <span>+</span> Create New PlayGround</AddPlayground>
         </ContentContainer>
     </StyledLeftComponenet>
   )

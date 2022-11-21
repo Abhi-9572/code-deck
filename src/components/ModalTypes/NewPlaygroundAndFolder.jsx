@@ -1,28 +1,102 @@
-import React, { useContext } from 'react'
-import { Header, Heading } from '../Model'
+import React, { useContext,useState } from 'react'
+import { Header, Heading,CloseButton } from '../Model'
 import {IoCloseSharp} from 'react-icons/io5'
 import { ModelContext } from '../../context/ModalContext'
+import { PlaygroundContext } from '../../context/PlaygroundContext'
+import Select from 'react-select';
+import styled from 'styled-components';
+
+
+const InputWithSelect = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  margin-top: 1.2rem;
+  align-items: center;
+  input {
+    flex-grow: 1;
+    height: 2rem;
+  }
+  button {
+    background: #241f21;
+    height: 2rem;
+    color: white;
+    padding: 0 2rem;
+  }
+`;
 
 const NewPlaygroundAndFolder = () => {
-    const {setisOpenModal}=useContext(ModelContext)
+  const { closeModal } = useContext(ModelContext);
+  const { addPlaygroundAndFolder } = useContext(PlaygroundContext);
+
+  const languageOptions = [
+    { value: "c++", label: "C++" },
+    { value: "java", label: "Java" },
+    { value: "javascript", label: "JavaScript" },
+    { value: "python", label: "Python" },
+  ];
+
+  const [playgroundName, setPlaygroundName] = useState("")
+  const [folderName, setFolderName] = useState("")
+  const [language, setLanguage] = useState(languageOptions[0]);
+
+  const handleLanguageChange = (selectedOption) => {
+    setLanguage(selectedOption);
+  };
+
   return (
     <>
-     <Header>
-                <Heading ><p> Create newPlayGround and Create new Folder</p></Heading>
-                <IoCloseSharp onClick={()=>setisOpenModal(false)}/>
-            </Header>
-           
-           <p>Enter Folder Name:<input type="text" /></p> 
-           <p>Enter PlayGround:<input type="text" /></p> 
-           <select name="" id="">
-            <option value="C++">C++</option>
-            <option value="Java">Java</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="Python">Python</option>
-           </select>
-            <button>create New PlayGround</button>
+      <Header>
+        <h2>Create New Playground & Create New Folder</h2>
+        <CloseButton onClick={() => closeModal()}>
+          <IoCloseSharp />
+        </CloseButton>
+      </Header>
+      <InputWithSelect>
+        <label>Enter Folder Name</label>
+        <input type='text' onChange={(e) => setFolderName(e.target.value)} />
+
+        <label>Enter Card Name</label>
+        <input type='text' onChange={(e) => setPlaygroundName(e.target.value)} />
+
+        <Select
+          options={languageOptions}
+          value={language}
+          onChange={handleLanguageChange}
+        />
+
+        <button onClick={() => {
+          addPlaygroundAndFolder(folderName, playgroundName, language.label)
+          closeModal();
+        }}> Create Playground </button>
+      </InputWithSelect>
     </>
   )
 }
 
 export default NewPlaygroundAndFolder
+
+// const NewPlaygroundAndFolder = () => {
+//     const {closeModal}=useContext(ModelContext)
+//   return (
+//     <>
+//      <Header>
+//                 <Heading ><p> Create newPlayGround and Create new Folder</p></Heading>
+//                 <IoCloseSharp onClick={()=>closeModal()}/>
+//             </Header>
+           
+//            <p>Enter Folder Name:<input type="text" /></p> 
+//            <p>Enter PlayGround:<input type="text" /></p> 
+//            <select name="" id="">
+//             <option value="C++">C++</option>
+//             <option value="Java">Java</option>
+//             <option value="JavaScript">JavaScript</option>
+//             <option value="Python">Python</option>
+//            </select>
+//             <button>create New PlayGround</button>
+//     </>
+//   )
+// }
+
+// export default NewPlaygroundAndFolder
