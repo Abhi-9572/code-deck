@@ -16,7 +16,8 @@ function App() {
     <GlobalStyle/>
    <Routes>
     <Route path="/" element={<Home/>}></Route>
-    <Route path="/playground" element={<Playground/>}></Route>
+    {/* <Route path="/playground" element={<Playground/>}></Route> */}
+    <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
     <Route path="*" element={<Error404/>}></Route>
    </Routes>
     </BrowserRouter>
