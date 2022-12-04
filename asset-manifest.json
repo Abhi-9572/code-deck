@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/code-deck/static/css/main.e6c13ad2.css",
+    "main.js": "/code-deck/static/js/main.c969b565.js",
+    "static/media/logo.png": "/code-deck/static/media/logo.312d10afc59ad64ee712.png",
+    "index.html": "/code-deck/index.html",
+    "main.e6c13ad2.css.map": "/code-deck/static/css/main.e6c13ad2.css.map",
+    "main.c969b565.js.map": "/code-deck/static/js/main.c969b565.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c969b565.js"
+  ]
+}
