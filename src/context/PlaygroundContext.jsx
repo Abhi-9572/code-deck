@@ -41,7 +41,7 @@ const PlaygroundProvider = ({ children }) => {
             playgrounds: {
                 [uuid()]: {
                     title: "Stack Implementation",
-                    language: "c++",
+                    language: "cpp",
                     code: languageMap["cpp"].defaultCode,
                 },
                 [uuid()]: {

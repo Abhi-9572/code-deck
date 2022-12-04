@@ -36,23 +36,3 @@ const EditFolder = () => {
 
 export default EditFolder;
 
-/*
-
-const EditFolder = () => {
-  const {closeModal}=useContext(ModelContext)
-  return (
-   <>
-            <Header>
-                <Heading><p>Edit Folder</p></Heading>
-                <IoCloseSharp onClick={()=>closeModal()}/>
-            </Header>
-             
-           <p>Enter New Folder:<input type="text" /></p> 
-            <button>Edit Folder</button>
-   </>
-  )
-}
-
-export default EditFolder
-
-*/

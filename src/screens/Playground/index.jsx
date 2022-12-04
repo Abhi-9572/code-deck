@@ -103,9 +103,10 @@ const Playground = () => {
         cardId: "",
       }
     })
+    console.log(currentLanguage)
     const language_id = languageMap[currentLanguage].id;
-    const source_code = encode(currentCode);
-    const stdin = encode(currentInput);
+       const source_code = encode(currentCode);
+       const stdin = encode(currentInput);
 
     // pass these things to Create Submissions
     const token = await postSubmission(language_id, source_code, stdin);

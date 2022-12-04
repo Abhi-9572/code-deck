@@ -75,24 +75,3 @@ const NewPlayGround = () => {
 
 export default NewPlayGround
 
-// const NewPlayGround = () => {
-//   const {closeModal}=useContext(ModelContext)
-//   return (
-//     <>
-//             <Header>
-//                 <Heading><p>Create new PlayGround</p></Heading>
-//                 <IoCloseSharp onClick={()=>closeModal()}/>
-//             </Header>
-//             <p>Enter PlayGround:<input type="text" /></p> 
-//             <select name="" id="">
-//             <option value="C++">C++</option>
-//             <option value="Java">Java</option>
-//             <option value="JavaScript">JavaScript</option>
-//             <option value="Python">Python</option>
-//            </select>
-//             <button>create New PlayGround</button>
-//    </>
-//   )
-// }
-
-// export default NewPlayGround

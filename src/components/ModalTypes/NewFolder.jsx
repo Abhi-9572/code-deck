@@ -32,19 +32,3 @@ const NewFolder = () => {
 
 export default NewFolder
 
-// const NewFolder = () => {
-//   const {closeModal}=useContext(ModelContext)
-//   return (
-//    <>
-//             <Header>
-//                 <Heading><p>Create new Folder</p></Heading>
-//                 <IoCloseSharp onClick={()=>closeModal()}/>
-//             </Header>
-             
-//            <p>Enter Folder Name:<input type="text" /></p> 
-//             <button>create New Folder</button>
-//    </>
-//   )
-// }
-
-// export default NewFolder

@@ -34,18 +34,3 @@ const EditPlayGroundTitle = () => {
 
 export default EditPlayGroundTitle
 
-// const EditPlayGroundTitle = () => {
-//   const {closeModal}=useContext(ModelContext)
-//   return (
-//     <>
-//             <Header>
-//                 <Heading><p>Edit PlayGround</p></Heading>
-//                 <IoCloseSharp onClick={()=>closeModal()}/>
-//             </Header>
-//             <p>Enter New  PlayGround:<input type="text" /></p> 
-//             <button>Edit PlayGround</button>
-//    </>
-//   )
-// }
-
-// export default EditPlayGroundTitle

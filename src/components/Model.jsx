@@ -85,7 +85,7 @@ const Model = () => {
             {modalType===3 &&<NewPlaygroundAndFolder/>}
             {modalType===4 &&<EditFolder/>}
             {modalType===5 &&<EditPlayGroundTitle/>}
-            {modalType===6} && <Loading/>
+            {modalType===6 && <Loading/>}
            
             {/* <NewFolder/> */}
             {/* <NewPlayGround/>
