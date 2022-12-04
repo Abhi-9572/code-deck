@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Error404 from "./screens/Error404";
 import Home from "./screens/Home";
 import Playground from "./screens/Playground";
@@ -12,7 +12,7 @@ function App() {
     <>
     <PlaygroundProvider>
     <ModalProvider>
-    <BrowserRouter>
+    <HashRouter>
     <GlobalStyle/>
    <Routes>
     <Route path="/" element={<Home/>}></Route>
@@ -20,7 +20,7 @@ function App() {
     <Route path="/playground/:folderId/:playgroundId" element={<Playground />} />
     <Route path="*" element={<Error404/>}></Route>
    </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </ModalProvider>
     </PlaygroundProvider>
    
